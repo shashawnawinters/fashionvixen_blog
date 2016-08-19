@@ -9,6 +9,24 @@
   </head>
 
   <body>
+  <header>
+      <div class="nav">
+        <ul>
+          <% if logged_in? %>
+            <a href="/"><li>Home</li></a>
+            <a href="/articles"><li>Dear Diary</li></a>
+            <a href="/jashton"><li>Fashion Vixen x J. Ashton</li></a>
+            <a href="/logout", method: :delete><li>Logout</li></a>
+          <% else %>
+            <a href="/login"><li>Login</li></a>
+            <a href="/users/new"><li>Sign Up</li></a>
+          <% end %>
+        </ul>
+      </div>
+  </header>
     <%= yield %>
   </body>
+  <footer>
+    © 2016 by Shashawna Winters
+  </footer>
 </html>
